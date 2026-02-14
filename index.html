@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day Pari!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffeef2;
+            font-family: 'Montserrat', sans-serif;
+            color: #d63384;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* --- Falling Hearts CSS --- */
+        .heart-particle {
+            position: fixed;
+            top: -10px;
+            color: #ff4d6d;
+            font-size: 20px;
+            user-select: none;
+            z-index: 1000;
+            pointer-events: none;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(105vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* --- Layout Styles --- */
+        .header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(255, 238, 242, 0.7), rgba(255, 238, 242, 0.7));
+        }
+
+        h1 { font-family: 'Dancing Script', cursive; font-size: 4.5rem; margin-bottom: 10px; color: #ff4d6d; }
+        p { font-size: 1.2rem; color: #d63384; }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 50px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .photo-frame {
+            background: white;
+            padding: 15px 15px 40px 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            transform: rotate(-2deg);
+            transition: 0.4s ease;
+        }
+
+        .photo-frame:nth-child(even) { transform: rotate(3deg); }
+        .photo-frame:hover { transform: scale(1.05) rotate(0deg); z-index: 10; }
+
+        .photo-frame img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+
+        .note-container {
+            background: #fff0f5;
+            padding: 80px 20px;
+            margin: 50px 0;
+            border-top: 2px solid #ffcad4;
+            border-bottom: 2px solid #ffcad4;
+        }
+
+        .note-content {
+            max-width: 750px;
+            margin: 0 auto;
+            font-size: 1.5rem;
+            line-height: 1.8;
+            font-style: italic;
+            border-left: 8px solid #ff4d6d;
+            padding-left: 30px;
+            text-align: left;
+            color: #8c2f39;
+        }
+
+        .proposal {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffeef2;
+        }
+
+        .proposal h2 { font-family: 'Dancing Script', cursive; font-size: 3.5rem; margin-bottom: 30px; }
+
+        .btn-yes {
+            background: linear-gradient(45deg, #ff4d6d, #ff758c);
+            color: white;
+            border: none;
+            padding: 25px 60px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            border-radius: 60px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(255, 77, 109, 0.4);
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .btn-yes:hover { 
+            background: #c9184a; 
+            transform: scale(1.15); 
+            box-shadow: 0 15px 35px rgba(255, 77, 109, 0.6);
+        }
+
+        #celebration-msg {
+            display: none;
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #ff4d6d;
+            margin-top: 20px;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <audio id="bgMusic" loop>
+        <source src="love.mp3" type="audio/mpeg">
+    </audio>
+
+    <section class="header">
+        <h1>Hey Pari! ❤️</h1>
+        <p>Scroll down to see our journey...</p>
+        <p style="font-size: 0.9rem; margin-top: 20px; opacity: 0.7;">(Tap anywhere to play music)</p>
+    </section>
+
+    <section class="gallery">
+        <div class="photo-frame"><img src="https://i.ibb.co/Q7mmky0P/Whats-App-Image-2026-02-14-at-1-18-12-PM.jpg" alt="Memory 1"><p>Moment #1</p></div>
+        <div class="photo-frame"><img src="https://i.ibb.co/KcxWHKk6/Whats-App-Image-2026-02-14-at-1-18-13-PM.jpg" alt="Memory 2"><p>Moment #2</p></div>
+        <div class="photo-frame"><img src="https://i.ibb.co/twJKFmxH/Whats-App-Image-2026-02-14-at-1-18-15-PM.jpg" alt="Memory 3"><p>Moment #3</p></div>
+        <div class="photo-frame"><img src="https://i.ibb.co/VYYCXHLD/Whats-App-Image-2026-02-14-at-1-18-16-PM.jpg" alt="Memory 4"><p>Moment #4</p></div>
+        <div class="photo-frame"><img src="https://i.ibb.co/VYYCXHLD/Whats-App-Image-2026-02-14-at-1-18-16-PM.jpg" alt="Memory 5"><p>Moment #5</p></div>
+        <div class="photo-frame"><img src="https://i.ibb.co/9xP14n1/Whats-App-Image-2026-02-14-at-1-18-11-PM.jpg" alt="Memory 6"><p>Moment #6</p></div>
+    </section>
+
+    <section class="note-container">
+        <div class="note-content">
+            To my dearest Pari,<br><br>
+            Every single day with you feels like a blessing. You’ve brought so much color into my life, and I wanted to make this just to remind you how special you are to me.<br><br>
+            Thank you for being my peace and my joy. I look forward to making a thousand more memories with you.<br><br>
+            Happy Valentine’s Day, my Cutiepie ❤️
+        </div>
+    </section>
+
+    <section class="proposal">
+        <h2>Pari...</h2>
+        <button class="btn-yes" id="yesBtn" onclick="celebrate()">
+            Will you be my Valentine, Pari? 🌹
+        </button>
+        <div id="celebration-msg">Yay! I love you so much Pari! ❤️</div>
+    </section>
+
+    <script>
+        // Start music on first interaction
+        document.body.addEventListener('click', function() {
+            const audio = document.getElementById('bgMusic');
+            audio.play().catch(e => console.log("Audio play blocked"));
+        }, { once: true });
+
+        // Function to create falling hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart-particle');
+            heart.innerHTML = '❤️';
+            
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's'; 
+            heart.style.opacity = Math.random();
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        // Constant falling hearts
+        setInterval(createHeart, 300);
+
+        // Celebration function
+        function celebrate() {
+            document.getElementById('yesBtn').style.display = 'none';
+            document.getElementById('celebration-msg').style.display = 'block';
+            
+            // Explosion of hearts
+            for(let i=0; i<150; i++) {
+                setTimeout(createHeart, i * 20);
+            }
+        }
+    </script>
+</body>
+</html>
